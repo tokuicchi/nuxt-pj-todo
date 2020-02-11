@@ -17,7 +17,7 @@ export const actions = {
       todosRef.add({
         name: name,
         done: false,
-        created: firebase.firebase.FieldValue.serverTimestamp()
+        created: firebase.firestore.FieldValue.serverTimestamp()
       })
     }
   }),
@@ -29,4 +29,10 @@ export const actions = {
       done: !todo.done
     })
   })
+}
+
+export const getters = {
+  orderdTodos: state => {
+    return _.sortBy(state.todos, 'created')
+  }
 }

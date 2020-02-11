@@ -1,10 +1,11 @@
 import firebase from 'firebase'
 
 const config = {
+  // databseURL: process.env.FIREBASE_DATABASE_URL,
   projectId: process.env.FIREBASE_PROJECT_ID
 }
 
-if (!forebase.apps.lengh) {
+if (!firebase.apps.length) {
   firebase.initializeApp(config)
 }
 
